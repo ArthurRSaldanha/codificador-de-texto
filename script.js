@@ -1,11 +1,22 @@
 let sound = new Audio('sound/glitch-sound-effect-12796.mp3');
 
-let button = document.querySelector('button');
+let buttonEncoder = document.getElementById('encode')
+let buttonDecoder = document.getElementById('decode')
 let textarea  = document.getElementById('textInput');
 let decoder = document.getElementById('decoder');
 let mensagem = document.getElementById('message');
 
-button.addEventListener('click', function(){
+buttonEncoder.addEventListener('click', function(){
+    textarea.style.animation = ""
+    setTimeout(() => textarea.style.animation = "buttonGlitch .5s linear", 5)
+    decoder.style.animation = ""
+    setTimeout(() => decoder.style.animation = "buttonGlitch .5s linear, 5", 5) 
+    sound.play()
+    sound.volume = 0.1
+    sound.playbackRate = 1.5
+});
+
+buttonDecoder.addEventListener('click', function(){
     textarea.style.animation = ""
     setTimeout(() => textarea.style.animation = "buttonGlitch .5s linear", 5)
     decoder.style.animation = ""
@@ -37,6 +48,7 @@ function copiar(){
     console.log(copyText);
 
     navigator.clipboard.writeText(copyText);
+    alert(`A palavra "${copyText}" foi copiada`);
 }
 
 
