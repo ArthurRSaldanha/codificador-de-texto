@@ -23,3 +23,7 @@
   <li>CSS</li>
   <li>JavaScript</li>
 </ul>
+
+<p>
+  Deploy: <a href="https://codetrix-eight.vercel.app">CodeTrix</a>
+</p>
